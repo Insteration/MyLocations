@@ -8,7 +8,10 @@
 
 import UIKit
 
+
 class SecondViewController: UIViewController {
+    
+    //MARK:- Oulets
 
     override func viewDidLoad() {
         super.viewDidLoad()
