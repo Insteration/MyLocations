@@ -11,6 +11,13 @@ import CoreLocation
 
 class CurrentLocationViewController: UIViewController {
     
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var tagButton: UIButton!
+    @IBOutlet weak var getButton: UIButton!
+    
     let locationManager = CLLocationManager()
     var location: CLLocation? // add user location to this variable
     var updatingLocation = false
@@ -21,17 +28,21 @@ class CurrentLocationViewController: UIViewController {
     var lastGeocodingError: Error?
     var timer: Timer?
     
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var latitudeLabel: UILabel!
-    @IBOutlet weak var longitudeLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var tagButton: UIButton!
-    @IBOutlet weak var getButton: UIButton!
+    // MARK:- View Life Cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateLabels()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
     
     //MARK:- Actions
@@ -225,6 +236,25 @@ extension CurrentLocationViewController: CLLocationManagerDelegate {
             getButton.setTitle("Get My Location", for: .normal)
         }
     }
+}
+
+extension CurrentLocationViewController {
+    
+    //MARK:- Helper Methods
+    
+    func showLocationServicesDeniedAlert() {
+        let alert = UIAlertController(title: "Location Services Disabled",
+                                      message: "Please enable location services for this app in Settings.",
+                                      preferredStyle: .alert
+        )
+        
+        let okActions = UIAlertAction(title: "OK",
+                                      style: .default)
+        
+        alert.addAction(okActions)
+        
+        present(alert, animated: true, completion: nil)
+    }
     
     func string(from placemark: CLPlacemark) -> String {
         
@@ -258,19 +288,13 @@ extension CurrentLocationViewController: CLLocationManagerDelegate {
 
 extension CurrentLocationViewController {
     
-    //MARK:- Helper Methods
+    // MARK:- Navigation
     
-    func showLocationServicesDeniedAlert() {
-        let alert = UIAlertController(title: "Location Services Disabled",
-                                      message: "Please enable location services for this app in Settings.",
-                                      preferredStyle: .alert
-        )
-        
-        let okActions = UIAlertAction(title: "OK",
-                                      style: .default)
-        
-        alert.addAction(okActions)
-        
-        present(alert, animated: true, completion: nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TagLocation" {
+            let controller = segue.destination as! LocationDetailsViewController
+            controller.coordinate = location!.coordinate
+            controller.placemark = placemark
+        }
     }
 }
