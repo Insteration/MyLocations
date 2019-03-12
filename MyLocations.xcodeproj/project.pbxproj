@@ -62,13 +62,13 @@
 			children = (
 				D9E3ED76222E7AD9007003DD /* AppDelegate.swift */,
 				D9E3ED78222E7AD9007003DD /* CurrentLocationViewController.swift */,
-				D9DADBA12237BC5900CB406C /* LocationDetailsViewController.swift */,
 				D9E3ED7A222E7AD9007003DD /* SecondViewController.swift */,
 				D9E3ED7C222E7AD9007003DD /* Main.storyboard */,
-				D9DADBA32237CFE000CB406C /* CategoryPickerViewController.swift */,
 				D9E3ED7F222E7ADA007003DD /* Assets.xcassets */,
 				D9E3ED81222E7ADA007003DD /* LaunchScreen.storyboard */,
 				D9E3ED84222E7ADA007003DD /* Info.plist */,
+				D9DADBA32237CFE000CB406C /* CategoryPickerViewController.swift */,
+				D9DADBA12237BC5900CB406C /* LocationDetailsViewController.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";

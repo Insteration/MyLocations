@@ -169,7 +169,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAX-CD-EFj">
-                                                    <rect key="frame" x="242" y="11" width="44" height="20.5"/>
+                                                    <rect key="frame" x="95" y="11" width="191" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -375,6 +375,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="j09-ph-HmX" kind="unwind" identifier="PickedCategory" unwindAction="categoryPickerDidPickCategory:" id="ICB-H9-PJa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -384,6 +387,7 @@
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81S-EP-sxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="j09-ph-HmX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3709" y="-320"/>
         </scene>
