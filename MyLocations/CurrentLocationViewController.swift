@@ -40,7 +40,7 @@ class CurrentLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateLabels()
-        print("URL - \(getUrl())")
+//        print("URL - \(getUrl())")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -286,19 +286,6 @@ extension CurrentLocationViewController {
         }
         
         return line1 + "\n" + line2
-    }
-    
-    // Find Core Data Location in Library
-    
-    private func getUrl(path: String = "") -> URL {
-        var url = URL(fileURLWithPath: path)
-        do {
-            url = try FileManager.default.url(for: .libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent(path)
-        } catch {
-            print(error)
-        }
-        
-        return url
     }
 }
 
