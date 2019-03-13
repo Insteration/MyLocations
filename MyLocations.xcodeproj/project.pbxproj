@@ -54,8 +54,6 @@
 		D9E3ED6A222E7AD9007003DD = {
 			isa = PBXGroup;
 			children = (
-				D9DADBCD22392D3500CB406C /* Location+CoreDataClass.swift */,
-				D9DADBCE22392D3500CB406C /* Location+CoreDataProperties.swift */,
 				D9E3ED75222E7AD9007003DD /* MyLocations */,
 				D9E3ED74222E7AD9007003DD /* Products */,
 			);
@@ -80,9 +78,11 @@
 				D9E3ED81222E7ADA007003DD /* LaunchScreen.storyboard */,
 				D9E3ED84222E7ADA007003DD /* Info.plist */,
 				D9DADBA32237CFE000CB406C /* CategoryPickerViewController.swift */,
-				D9DADBA12237BC5900CB406C /* LocationDetailsViewController.swift */,
 				D9DADBA7223919C700CB406C /* Functions.swift */,
 				D9DADBA522390FDB00CB406C /* HudView.swift */,
+				D9DADBA12237BC5900CB406C /* LocationDetailsViewController.swift */,
+				D9DADBCD22392D3500CB406C /* Location+CoreDataClass.swift */,
+				D9DADBCE22392D3500CB406C /* Location+CoreDataProperties.swift */,
 				D9DADBCA223923BF00CB406C /* DataModel.xcdatamodeld */,
 			);
 			path = MyLocations;
