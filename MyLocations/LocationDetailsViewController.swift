@@ -117,6 +117,7 @@ extension LocationDetailsViewController {
         if indexPath != nil && indexPath!.section == 0 && indexPath!.row == 0 {
             return
         }
+        
         descriptionTextView.resignFirstResponder()
     }
 }
